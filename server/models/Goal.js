@@ -4,6 +4,12 @@ const dateFormat = require('../utils/dateFormat');
 
 
 const goalSchema = new Schema({
+    goalTitle: {
+        type: String,
+        required: 'You need to leave a goal!',
+        minlength: 1,
+        maxlength: 280,
+    },
     goalText: {
         type: String,
         required: 'You need to leave a goal!',

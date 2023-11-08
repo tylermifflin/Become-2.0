@@ -26,10 +26,10 @@ const userSchema = new Schema({
       ref: 'Goal',
     },
   ],
-  workouts: [
+  moodhistory: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Workout',
+      ref: 'Mood',
     },
   ],
 });
