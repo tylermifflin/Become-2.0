@@ -1,13 +1,13 @@
-// set up Quote model to store the Drill Sergeant's quotes
+// set up Mood model to store the User's mood
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const quoteSchema = new Schema({
-  quoteText: {
+const moodSchema = new Schema({
+  moodText: {
     type: String,
   },
 });
 
-const Quote = model('Quote', quoteSchema);
+const Mood = model('Mood', moodSchema);
 
-module.exports = Quote;
+module.exports = Mood;
