@@ -1,0 +1,92 @@
+/* Comments by Ever Muniz */
+
+/* universal body styling */
+body {
+  margin: 0; 
+  padding: 0; 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* styling separate for home and non home pages due to animation */
+.notHome {
+  flex: 1; 
+  padding-top: 200px;
+  min-height: 100vh;
+}
+
+/* navbar styling */
+nav {
+  height: 100px;
+}
+
+/* fix footer at the bottom of the page */
+footer {
+  margin-top: auto;
+  
+}
+
+/* breakpoint for screen sizes to hide/display logo */
+@media (max-width: 768px) {
+ .header img {
+    display: none;
+  }
+  .header h1 {
+    margin-left: 0px;
+  }
+ }
+
+ @media (min-width: 769px) {
+  .header h1 {
+    margin-left: 80px;
+  }
+ }
+
+ /* home page styling */
+.home {
+  background: url("../src/images/logo.png") no-repeat center center fixed;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  padding-top: 100px;
+}
+
+.home .card-title {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.box {
+  opacity: 0;
+  padding-top: 100px;
+}
+
+.landingPageText {
+  background-color:#212529;
+  margin-bottom: 100px;
+  font-size: 1.5rem;
+}
+
+.testimonials blockquote{
+  font-size: 1rem;
+}
+
+.menu-links {
+  position: absolute;
+  top: 100%; /* Position below the hamburger */
+  left: 0;
+  background-color: #ffffff; /* Set the background color for the menu */
+  border: 1px solid #ccc; /* Add a border for the menu */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Add a shadow for the menu */
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+  transition: all 0.3s ease-in-out; /* Add transition for smooth animation */
+}
+
+.menu-links.open {
+  display: flex; /* Display the menu when open */
+}
+
