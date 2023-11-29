@@ -6,6 +6,7 @@ import Auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
 
 const GoalForm = () => {
+  const [goalTitle, setGoalTitle] = useState('');
   const [goalText, setGoalText] = useState('');
   const [endDate, setEndDate] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
@@ -34,6 +35,7 @@ const GoalForm = () => {
 
   const handleChange = event => {
     if (event.target.value.length <= 280) {
+      setGoalTitle(event.target.value);
       setGoalText(event.target.value);
       setCharacterCount(event.target.value.length);
     }
@@ -49,9 +51,10 @@ const GoalForm = () => {
     try {
       console.log(typeof ( endDate));
       await addGoal({
-        variables: { goalText: goalText, endDate: endDate }
+        variables: { goalTitle: goalTitle, goalText: goalText, endDate: endDate }
       });
 
+      setGoalTitle('');
       setGoalText('');
       setCharacterCount(0);
       setEndDate('');
@@ -62,7 +65,7 @@ const GoalForm = () => {
 
   return (
     <div>
-      <h3>What is your Workout Goal!</h3>
+      <h3>What is your Goal?</h3>
 
       {Auth.loggedIn() ? (
         <>
