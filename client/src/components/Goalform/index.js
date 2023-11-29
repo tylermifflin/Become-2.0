@@ -82,6 +82,16 @@ const GoalForm = () => {
           >
             <div className="col-12 col-lg-9">
               <textarea
+                name="goalTitle"
+                placeholder="Name your goal here..."
+                value={goalTitle}
+                className="form-input w-100"
+                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                onChange={handleChange}
+              ></textarea>
+            </div>
+            <div className="col-12 col-lg-9">
+              <textarea
                 name="goalText"
                 placeholder="Here's a new goal..."
                 value={goalText}
