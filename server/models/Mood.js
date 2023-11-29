@@ -7,7 +7,7 @@ const moodSchema = new Schema({
     type: String,
   },
   moodDate: {
-    type: Date,
+    type: String,
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
