@@ -25,9 +25,10 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_GOAL = gql`
-  mutation addGoal($goalText: String! $endDate: String) {
-    addGoal(goalText: $goalText , endDate: $endDate) {
+  mutation addGoal($goalTitle: String! $goalText: String! $endDate: String) {
+    addGoal(goalTitle: $goalTitle, goalText: $goalText , endDate: $endDate) {
       _id
+      goalTitle
       goalText
       createdAt
       endDate
@@ -35,34 +36,13 @@ export const ADD_GOAL = gql`
   }
 `;
 
-export const ADD_WORKOUT = gql`
-  mutation addWorkout($exercises: [ExerciseInput]!) {
-    addWorkout(exercises: $exercises) {
+export const ADD_MOOD = gql`
+  mutation addMood($moodText: String! $moodDate: String! $thought: String!) {
+    addMood(moodText: $moodText, moodDate: $moodDate , thought: $thought) {
       _id
-      date
-      exercises {
-        name
-        sets {
-          reps
-          weight
-        }
-      }
-    }
-  }
-`;
-
-  export const ADD_EXERCISE = gql`
-  mutation addExercise($workoutId: ID!, $exercise: ExerciseInput!) {
-    addExercise(workoutId: $workoutId, exercise: $exercise) {
-      _id
-      date
-      exercises {
-        name
-        sets {
-          reps
-          weight
-        }
-      }
+      moodText
+      moodDate
+      thought
     }
   }
 `;
@@ -78,18 +58,13 @@ export const REMOVE_GOAL = gql`
   }
 `;
 
-export const REMOVE_WORKOUT = gql`
-  mutation removeWorkout($workoutId: ID!) {
-    removeWorkout(workoutId: $workoutId) {
+export const REMOVE_MOOD = gql`
+  mutation removeMood($moodId: ID!) {
+    removeMood(moodId: $moodId) {
       _id
-      date
-      exercises {
-        name
-        sets {
-          reps
-          weight
-        }
-      }
+      moodText
+      moodDate
+      thought
     }
   }
 `;
