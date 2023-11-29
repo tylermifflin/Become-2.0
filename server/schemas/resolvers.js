@@ -1,16 +1,16 @@
 // Purpose: to define the query and mutation functionality to work with the Mongoose models and use them with Apollo Server and GraphQL
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Goal, Quote, Workout, SetSchema, exerciseSchema, } = require('../models');
+const { User, Goal, Mood, } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
     // set up queries, users will populate goals and workouts connected to the user
     users: async () => {
-      return User.find().populate('goals workouts');
+      return User.find().populate('goals moodhistory');
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('goals workouts');
+      return User.findOne({ username }).populate('goals moodhistory');
     },
     goals: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -19,19 +19,16 @@ const resolvers = {
     goal: async (parent, { goalId }) => {
       return Goal.findOne({ _id: goalId });
     },
-   workouts: async (parent, { username }) => {
+   moods: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Workout.find(params).sort({ createdAt: -1 });
+      return Mood.find(params).sort({ createdAt: -1 });
     },
-    workout: async (parent, { workoutId }) => {
-      return Workout.findOne({ _id: workoutId });
-    },
-    quotes: async () => {
-      return Quote.find();
+    mood: async (parent, { moodId }) => {
+      return Mood.findOne({ _id: moodId });
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate('goals workouts');
+        return User.findOne({ _id: context.user._id }).populate('goals moodhistory');
       }
       throw new AuthenticationError('You need to be logged in!');
     },
