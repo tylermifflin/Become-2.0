@@ -8,29 +8,26 @@ export const QUERY_USER = gql`
       email
       goals {
         _id
+        goalTitle
         goalText
         createdAt
         endDate
       }
-      workouts {
+      moodhistory {
         _id
-        date
-        exercises {
-          name
-          sets {
-            reps
-            weight
-          }
-        }
-      }
+        moodText
+        moodDate
+        thought
     }
   }
+}
 `;
 
 export const QUERY_GOALS = gql`
   query goals($username: String) {
     goals(username: $username) {
       _id
+      goalTitle
       goalText
       createdAt
       endDate
@@ -42,6 +39,7 @@ export const QUERY_SINGLE_GOAL = gql`
   query goal($goalId: ID!) {
     goal(goalId: $goalId) {
       _id
+      goalTitle
       goalText
       createdAt
       endDate
@@ -49,27 +47,24 @@ export const QUERY_SINGLE_GOAL = gql`
   }
 `;
 
-export const QUERY_WORKOUTS = gql`
-  query workouts($username: String) {
-    workouts(username: $username) {
+export const QUERY_MOODS = gql`
+  query moods($username: String) {
+    moods(username: $username) {
       _id
-      date
-      exercises {
-        name
-        sets {
-          reps
-          weight
-        }
-      }
+      moodText
+      moodDate
+      thought
     }
   }
 `;
 
-export const QUERY_QUOTES = gql`
-  query quotes {
-    quotes {
+export const QUERY_SINGLE_MOOD = gql`
+  query mood($moodId: ID!) {
+    mood(moodId: $moodId) {
       _id
-      quoteText
+      moodText
+      moodDate
+      thought
     }
   }
 `;
@@ -82,20 +77,16 @@ export const QUERY_ME = gql`
       email
       goals {
         _id
+        goalTitle
         goalText
         createdAt
         endDate
       }
-      workouts {
+      moodhistory {
         _id
-        date
-        exercises {
-          name
-          sets {
-            reps
-            weight
-          }
-        }
+        moodText
+        moodDate
+        thought
       }
     }
   }
