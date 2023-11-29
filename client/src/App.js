@@ -14,7 +14,6 @@ import Login from './pages/Login';
 import SingleGoal from './pages/SingleGoal';
 import Dashboard from './pages/Dashboard';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import Workout from "./pages/Workout";
 import '@smastrom/react-rating/style.css'
 
@@ -76,7 +75,6 @@ function App() {
               />
             </Routes>
           </div>
-          <Footer />
         </div>
       </Router>
     </ApolloProvider>
