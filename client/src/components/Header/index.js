@@ -42,7 +42,7 @@ const Header = () => {
       <div className="container-fluid col-11">
         <Link className="navbar-brand" to="/">
           <h1>
-            Drill Sergeant
+            Become
           </h1>
           
         </Link>
@@ -68,7 +68,7 @@ const Header = () => {
             <div>
               <div className="offcanvas-header">
                 <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
-                  Drill Sergeant
+                  Become
                 </h5>
                 <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
               </div>
@@ -81,12 +81,12 @@ const Header = () => {
                   </li>
                   <li className="nav-item">
                     <Link className="nav-link" to="/workout" onClick={closeMenu}>
-                      Start Workout
+                      Track Your Mood
                     </Link>
                   </li>
                   <li className="nav-item">
                     <Link className="nav-link" to="/goal">
-                      Make a Goal
+                      Create a Goal
                     </Link>
                   </li>
                   <li className="nav-item">
@@ -101,7 +101,7 @@ const Header = () => {
             <div>
               <div className="offcanvas-header">
                 <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
-                  Drill Sergeant
+                  Become
                 </h5>
                 <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
               </div>
