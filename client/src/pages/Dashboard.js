@@ -67,6 +67,9 @@ const Dashboard = () => {
             <p>Goal Description: {goal.goalText}</p>
             <p>Created On: {goal.createdAt}</p>
             <p>Due Date: {goal.endDate}</p>
+            <li>
+              <button onClick={() => handleDeleteGoal(goal._id)}>Delete</button>
+            </li>
           </div>
         ))}
       </div>
