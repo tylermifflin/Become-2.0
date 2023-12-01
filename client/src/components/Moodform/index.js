@@ -14,3 +14,23 @@ const MoodForm = () => {
     const [characterCount, setCharacterCount] = useState(0);
     const moods = useQuery(QUERY_MOODS);
     const me = useQuery(QUERY_ME);
+
+    const [addMood, { error }] = useMutation(ADD_MOOD, {
+        update(cache, { data: { addMood } }) {
+            try {
+                console.log(moods);
+                cache.writeQuery({
+                    query: QUERY_MOODS,
+                    data: { moods: [addMood, ...moods.data.moods] }
+                });
+            } catch (e) {
+                console.error(e);
+            }
+
+            console.log(me);
+            cache.writeQuery({
+                query: QUERY_ME,
+                data: { me: { ...me, moods: [...me.data.me.moods, addMood] } }
+            });
+        }
+    });
