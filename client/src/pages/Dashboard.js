@@ -1,8 +1,8 @@
 import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_WORKOUTS } from '../utils/queries';
-import { REMOVE_WORKOUT } from '../utils/mutations';
+import { QUERY_MOODS, QUERY_GOALS } from '../utils/queries';
+import { REMOVE_MOOD, REMOVE_GOAL } from '../utils/mutations';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 
@@ -69,7 +69,8 @@ const Dashboard = () => {
 
         {user.goals.map((goal) => (
           <div className="card p-2 mb-3" key={goal._id}>
-            <p className="card-title">Goal: {goal.goalText}</p>
+            <p className="card-title">Goal: {goal.goalTitle}</p>
+            <p>Goal Description: {goal.goalText}</p>
             <p>Created On: {goal.createdAt}</p>
             <p>Due Date: {goal.endDate}</p>
           </div>
@@ -78,7 +79,7 @@ const Dashboard = () => {
       <div className="card p-2">
         <h3 className="text-center">Previous Workouts:</h3>
         <div>
-          {user.workouts.slice().reverse().map((workout) => (
+          {user.moodhistory.slice().reverse().map((moods) => (
             <div className="card p-2 mb-3" key={workout._id}>
               <p className="card-title">Date: {workout.date}</p>
               <ul>
