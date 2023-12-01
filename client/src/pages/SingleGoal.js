@@ -30,6 +30,7 @@ const GoalPage = () => {
           <ul>
             {data.goals.map((goal) => (
               <li key={goal._id}>
+                <p>Goal Title: {goal.goalTitle}</p>
                 <p>Goal: {goal.goalText}</p>
                 <p>Created On: {goal.createdAt}</p>
                 <p>Due Date: {goal.endDate}</p>
