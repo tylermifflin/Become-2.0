@@ -6,37 +6,19 @@ import { REMOVE_MOOD, REMOVE_GOAL } from '../utils/mutations';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 
-const SetDetails = ({ set }) => (
-  <li>
-    <p>Reps: {set.reps}</p>
-    <p>Weight: {set.weight}</p>
-  </li>
-);
-
-const ExerciseDetails = ({ exercise }) => (
-  <li>
-    <p>Exercise: {exercise.name}</p>
-    <ul>
-      {exercise.sets.map((set, setIndex) => (
-        <SetDetails key={setIndex} set={set} />
-      ))}
-    </ul>
-  </li>
-);
-
 const Dashboard = () => {
   const { username: userParam } = useParams();
 
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
-  const [deleteWorkout] = useMutation(REMOVE_WORKOUT);
+  const [deleteMood] = useMutation(REMOVE_MOOD);
 
-  const handleDeleteWorkout = async (workoutId) => {
+  const handleDeleteMood = async (moodId) => {
     try {
-      await deleteWorkout({
-        variables: { workoutId },
-        refetchQueries: [{ query: QUERY_WORKOUTS }, { query: QUERY_ME }],
+      await deleteMood({
+        variables: { moodId },
+        refetchQueries: [{ query: QUERY_MOODS }, { query: QUERY_ME }],
       });
     } catch (e) {
       console.error(e);
@@ -77,18 +59,15 @@ const Dashboard = () => {
         ))}
       </div>
       <div className="card p-2">
-        <h3 className="text-center">Previous Workouts:</h3>
+        <h3 className="text-center">Mood History:</h3>
         <div>
-          {user.moodhistory.slice().reverse().map((moods) => (
-            <div className="card p-2 mb-3" key={workout._id}>
-              <p className="card-title">Date: {workout.date}</p>
-              <ul>
-                {workout.exercises.map((exercise, index) => (
-                  <ExerciseDetails key={index} exercise={exercise} />
-                ))}
-              </ul>
+          {user.moodhistory.slice().reverse().map((mood) => (
+            <div className="card p-2 mb-3" key={mood._id}>
+              <p className="card-title">Your Mood: {mood.text}</p>
+              <p>Date: {mood.createdAt}</p>
+              <p>Thoughts: {mood.thought}</p>
               <li>
-                <button onClick={() => handleDeleteWorkout(workout._id)}>Delete</button>
+                <button onClick={() => handleDeleteMood(mood._id)}>Delete</button>
               </li>
             </div>
           ))}
