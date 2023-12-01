@@ -66,7 +66,19 @@ const moodOptions = [ 'blissful', 'happy', 'sad', 'angry', 'anxious',
     return (
         <div>
             <h3>How are you feeling today?</h3>
-            <form onSubmit={handleFormSubmit}>
+
+            {Auth.loggedIn() ? (
+                <>
+                 <p
+            className={`m-0 ${
+              characterCount === 280 || error ? 'text-danger' : ''
+            }`}
+          >
+            Character Count: {characterCount}/280
+          </p>
+            <form 
+            className="flex-row justify-center justify-space-between-md align-center"
+            onSubmit={handleFormSubmit}>
                 <div className="form-group">
                     <label htmlFor="moodText">Mood</label>
                     <select className="form-control" id="moodText" name="moodText" onChange={handleChange}>
@@ -83,7 +95,21 @@ const moodOptions = [ 'blissful', 'happy', 'sad', 'angry', 'anxious',
                     <label htmlFor="characterCount">Character Count: {characterCount}/280</label>
                     <button className="btn btn-primary btn-block py-3" type="submit">Submit</button>
                 </div>
+                {error && (
+              <div className="col-12 my-3 bg-danger text-white p-3">
+                {error.message}
+              </div>
+            )}
             </form>
+            </>
+            ) : (
+                <p>
+                    You need to be logged in to share your mood. Please{' '}
+                    <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+                </p>
+            )}
         </div>
     );
-}
+};
+
+export default MoodForm;
