@@ -1,4 +1,3 @@
-// comments by Ever Muniz
 
 import React, { useState, useEffect } from "react";
 
@@ -7,7 +6,7 @@ import RatingModal from "../components/Modal";
 
 // import mutations and queries for apollo
 import { useMutation } from "@apollo/client";
-import { ADD_WORKOUT } from "../utils/mutations";
+import { ADD_MOOD } from "../utils/mutations";
 import { QUERY_ME } from "../utils/queries";
 
 // import api key from local .env
