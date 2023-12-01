@@ -6,9 +6,6 @@ import Auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
 
 const MoodForm = () => {
-    // i want the mood to be a dropdown menu with 5 options
-    // i want the thought to be a text box
-
     const [moodText, setMoodText] = useState('');
     const [thought, setThought] = useState('');
     const [characterCount, setCharacterCount] = useState(0);
@@ -59,5 +56,34 @@ const MoodForm = () => {
         }
     }
 
-    
+// i want the user to be able to select a mood from a dropdown menu and then have the mood be added to the database
+// i want the user to be able to type in a thought and have that thought be added to the database
+const moodOptions = [ 'blissful', 'happy', 'sad', 'angry', 'anxious', 
+'excited', 'tired', 'calm', 'confused', 'frustrated', 'bored', 'lonely', 
+'loved', 'grateful', 'hopeful', 'proud', 'motivated', 'inspired','scared', 'stressed', 'overwhelmed', 
+'content', 'disappointed', 'embarrassed', 'jealous', 'optimistic', 'pessimistic', 'satisfied' ];
 
+    return (
+        <div>
+            <h3>How are you feeling today?</h3>
+            <form onSubmit={handleFormSubmit}>
+                <div className="form-group">
+                    <label htmlFor="moodText">Mood</label>
+                    <select className="form-control" id="moodText" name="moodText" onChange={handleChange}>
+                        {moodOptions.map((mood) => (
+                            <option value={mood}>{mood}</option>
+                        ))}
+                    </select>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="thought">Thought</label>
+                    <textarea className="form-control" placeholder="What's on your mind?" value={thought} onChange={handleChange} maxLength="280"></textarea>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="characterCount">Character Count: {characterCount}/280</label>
+                    <button className="btn btn-primary btn-block py-3" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    );
+}
