@@ -13,6 +13,7 @@ const Dashboard = () => {
     variables: { username: userParam },
   });
   const [deleteMood] = useMutation(REMOVE_MOOD);
+  const [deleteGoal] = useMutation(REMOVE_GOAL);
 
   const handleDeleteMood = async (moodId) => {
     try {
@@ -24,6 +25,17 @@ const Dashboard = () => {
       console.error(e);
     }
   };
+
+  const handleDeleteGoal = async (goalId) => {
+    try {
+      await deleteGoal({
+        variables: { goalId },
+        refetchQueries: [{ query: QUERY_GOALS }, { query: QUERY_ME }],
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  }; 
 
   const user = data?.me || data?.user || {};
 
