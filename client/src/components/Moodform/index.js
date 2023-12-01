@@ -34,3 +34,30 @@ const MoodForm = () => {
             });
         }
     });
+
+    const handleChange = event => {
+        if (event.target.value.length <= 280) {
+            setMoodText(event.target.value);
+            setThought(event.target.value);
+            setCharacterCount(event.target.value.length);
+        }
+    }
+
+    const handleFormSubmit = async event => {
+        event.preventDefault();
+
+        try {
+            await addMood({
+                variables: { moodText: moodText, thought: thought }
+            });
+
+            setMoodText('');
+            setThought('');
+            setCharacterCount(0);
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
+    
+
