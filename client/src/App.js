@@ -14,7 +14,8 @@ import Login from './pages/Login';
 import SingleGoal from './pages/SingleGoal';
 import Dashboard from './pages/Dashboard';
 import Header from './components/Header';
-import Workout from "./pages/Workout";
+import MoodPage from './pages/Moodpage';
+import Quote from './pages/Quote';
 import '@smastrom/react-rating/style.css'
 
 // Construct our main GraphQL API endpoint
@@ -70,8 +71,12 @@ function App() {
                 element={<SingleGoal />}
               />
               <Route 
-                path="/workout"
-                element={<Workout />}
+                path="/mood"
+                element={<MoodPage />}
+              />
+              <Route 
+                path="/quote"
+                element={<Quote />}
               />
             </Routes>
           </div>
