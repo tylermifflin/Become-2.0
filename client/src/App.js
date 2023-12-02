@@ -75,7 +75,7 @@ function App() {
                 element={<MoodPage />}
               />
               <Route 
-                path="/quote"
+                path="/inspiration"
                 element={<Quote />}
               />
             </Routes>
