@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 
-// rating modal from components
+
 import RatingModal from "../components/Modal";
 
 // import mutations and queries for apollo
