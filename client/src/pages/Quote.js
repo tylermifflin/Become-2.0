@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 
 const api_url = 'https://zenquotes.io/api/quotes/';
+
 const imageslandscape = ['/images/kalalaubeachkaui.jpg', '/images/mesaarch.jpg', '/images/montrotuiridge.jpg', 
 '/images/mtsuperiorfall.jpg', '/images/priestlakenorthernlights.jpg', '/images/reflectioncanyon.jpg',
 '/images/skypond.jpg', '/images/thewave.jpg'];
@@ -9,6 +10,10 @@ const imageslandscape = ['/images/kalalaubeachkaui.jpg', '/images/mesaarch.jpg',
 const imagesportrait = [ '/imgages/auroraiceland.jpg', '/images/cedarbreaks.jpg', '/images/deidifoss.jpg', '/images/gufufoss.jpg', 
 '/images/haenbrekkufoss.jpg', '/images/milkywaypriestlake.jpg', '/images/northernlightsicelandcabin.jpg', '/images/skogasfoss.jpg', 
 '/images/teahupoo.jpg']
+
+const randomlandscapeimage = imageslandscape[Math.floor(Math.random() * imageslandscape.length)];
+const randomportraitimage = imagesportrait[Math.floor(Math.random() * imagesportrait.length)];
+
 
 const Quotes = () => {
   const [apiDataList, setApiDataList] = useState([]);
