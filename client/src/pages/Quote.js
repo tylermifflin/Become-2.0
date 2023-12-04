@@ -35,5 +35,8 @@ const Quotes = () => {
       <h3>{apiDataList[1]}</h3>
     </div>
   );
+}
+
+export default Quotes;
 
   
