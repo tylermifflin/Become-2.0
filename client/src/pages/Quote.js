@@ -6,6 +6,10 @@ const imageslandscape = ['/images/kalalaubeachkaui.jpg', '/images/mesaarch.jpg',
 '/images/mtsuperiorfall.jpg', '/images/priestlakenorthernlights.jpg', '/images/reflectioncanyon.jpg',
 '/images/skypond.jpg', '/images/thewave.jpg'];
 
+const imagesportrait = [ '/imgages/auroraiceland.jpg', '/images/cedarbreaks.jpg', '/images/deidifoss.jpg', '/images/gufufoss.jpg', 
+'/images/haenbrekkufoss.jpg', '/images/milkywaypriestlake.jpg', '/images/northernlightsicelandcabin.jpg', '/images/skogasfoss.jpg', 
+'/images/teahupoo.jpg']
+
 const Quotes = () => {
   const [apiDataList, setApiDataList] = useState([]);
   
