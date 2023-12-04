@@ -2,6 +2,9 @@
 import React, { useState, useEffect } from "react";
 
 const api_url = 'https://zenquotes.io/api/quotes/';
+const imageslandscape = ['/images/kalalaubeachkaui.jpg', '/images/mesaarch.jpg', '/images/montrotuiridge.jpg', 
+'/images/mtsuperiorfall.jpg', '/images/priestlakenorthernlights.jpg', '/images/reflectioncanyon.jpg',
+'/images/skypond.jpg', '/images/thewave.jpg'];
 
 const Quotes = () => {
   const [apiDataList, setApiDataList] = useState([]);
