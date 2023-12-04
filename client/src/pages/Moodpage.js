@@ -30,7 +30,8 @@ const MoodPage = () => {
             <ul>
                 {data.moods.map((mood) => (
                 <li key={mood._id}>
-                    <p>Mood: {mood.mood}</p>
+                    <p>Mood: {mood.moodText}</p>
+                    <p>Thought: {mood.thought}</p>
                     <p>Created On: {mood.createdAt}</p>
                     <button onClick={() => handleDelete(mood._id)}>Delete</button>
                 </li>
