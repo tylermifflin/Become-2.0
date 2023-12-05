@@ -2,6 +2,8 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 
+function Home() {
+
 // animation for home page from green sock
   useEffect(() => {
     gsap.to(".box", {
@@ -31,5 +33,7 @@ import { gsap } from "gsap";
       </div>
     </main>
   );
+}
 
 export default Home;
+
