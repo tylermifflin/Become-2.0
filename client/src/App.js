@@ -16,7 +16,6 @@ import Dashboard from './pages/Dashboard';
 import Header from './components/Header';
 import MoodPage from './pages/Moodpage';
 import QuotePage from './pages/Quote';
-import '@smastrom/react-rating/style.css'
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
