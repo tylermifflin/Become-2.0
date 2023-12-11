@@ -1,4 +1,3 @@
-// Comments by Ever Muniz
 
 // importing all neccessary components
 
