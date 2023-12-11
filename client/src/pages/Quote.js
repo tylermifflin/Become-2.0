@@ -49,8 +49,9 @@ const QuotePage = () => {
       }
     };
     fetchApiData();
+    setRandomLandscapeImage();
   }
-  , []);
+  );
 
   const makeApiCall = async () => {
     const res = await fetch(api_url);
@@ -58,13 +59,10 @@ const QuotePage = () => {
     return data;
   };
 
-  const handleClick = () => {
-    fetchApiData();
-    setRandomLandscapeImage();
-  };
 
   return (
     <div style={imagestyle}>
+      <img src={backgroundImage} alt="background" className="bg" />
       <div className="container">
         <div className="row">
           <div className="col-md-12">
@@ -76,7 +74,7 @@ const QuotePage = () => {
                 <span id="author">{apiDataList}</span>
               </div>
               <div className="buttons">
-                <button className="btn btn-primary" id="new-quote">New Quote{handleClick}</button>
+                <button className="btn btn-primary" id="new-quote">New Quote{useEffect}</button>
               </div>
             </div>
           </div>
