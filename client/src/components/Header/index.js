@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Auth from "../../utils/auth";
-import logo from "../.././images/logoNoTagline.png";
 
 const Header = () => {
   const logout = (event) => {
@@ -36,9 +35,6 @@ const Header = () => {
 
   return (
     <nav className="navbar bg-body-tertiary fixed-top header">
-      <div className="col-1 ps-3">
-        <img src={logo} alt="logo" width="50" ></img>
-      </div>
       <div className="container-fluid col-11">
         <Link className="navbar-brand" to="/">
           <h1>
@@ -80,7 +76,7 @@ const Header = () => {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/workout" onClick={closeMenu}>
+                    <Link className="nav-link" to="/mood" onClick={closeMenu}>
                       Track Your Mood
                     </Link>
                   </li>
