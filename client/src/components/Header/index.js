@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Auth from "../../utils/auth";
-import logo from "../.././images/logo.png";
+import logo2 from "../.././images/logo2.png";
 
 const Header = () => {
   const logout = (event) => {
@@ -36,15 +36,12 @@ const Header = () => {
 
   return (
     <nav className="navbar bg-body-tertiary fixed-top header">
-      <div className="col-1 ps-3">
-        <img src={logo} alt="logo" width="50" ></img>
+      <div className="col-1 ps-5">
+        <img src={logo2} alt="logo" width="100" ></img>
       </div>
       <div className="container-fluid col-11">
         <Link className="navbar-brand" to="/">
-          <h1>
-            Become
-          </h1>
-          
+        <h1 className="text-center">Become</h1>  
         </Link>
         <button
           className="navbar-toggler"
