@@ -44,6 +44,7 @@ footer {
 
  /* home page styling */
 .home {
+  background: url("..src/images/logo.png") no-repeat center center fixed;
   -webkit-background-size: contain;
   -moz-background-size: contain;
   -o-background-size: contain;
