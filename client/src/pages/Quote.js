@@ -3,7 +3,13 @@ import React, { useState, useEffect } from "react";
 
 
 const QuotePage = () => {
-  const [apiDataList, setApiDataList] = useState([]);
+  const [apiData, setApiData] = useState({
+    quote: "",
+    author: ""
+  });
+  
+  const [loading, setLoading] = useState(true);
+
   const [backgroundImage, setbackgroundImage] = useState([]);
 
   const api_url = 'https://zenquotes.io/api/quotes/';
@@ -43,15 +49,14 @@ const QuotePage = () => {
         const quote = data[0].q;
         const author = data[0].a;
         console.log("API Data:", data);
-        setApiDataList(quote, author);
+        setApiData({ quote, author });
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
     fetchApiData();
-    setRandomLandscapeImage();
-  }
-  );
+  }, []);
 
   const makeApiCall = async () => {
     const res = await fetch(api_url);
