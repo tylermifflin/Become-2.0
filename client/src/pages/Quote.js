@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 
 
+
 const QuotePage = () => {
   const [apiData, setApiData] = useState({
     quote: "",
@@ -85,9 +86,8 @@ const QuotePage = () => {
 
 
   return (
-    <div style={imagestyle}>
-      <img src={backgroundImage} alt="background" className="bg" />
-      <div className="container">
+
+    <div className="quotepage">
         <div className="row">
           <div className="col-md-12">
             <div className="quote-container">
@@ -105,7 +105,6 @@ const QuotePage = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 }
 
