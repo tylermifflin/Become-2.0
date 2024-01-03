@@ -64,6 +64,21 @@ const QuotePage = () => {
     return data;
   };
 
+  const handleNewQuote = async () => {
+    setLoading(true);
+    try {
+      const data = await makeApiCall();
+      const quote = data[0].q;
+      const author = data[0].a;
+      console.log("API Data:", data);
+      setApiData({ quote, author });
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setLoading(false);
+    }
+  };
+
 
   return (
     <div style={imagestyle}>
@@ -79,7 +94,7 @@ const QuotePage = () => {
                 <span id="author">{apiData.author}</span>
               </div>
               <div className="buttons">
-                <button className="btn btn-primary" id="new-quote">New Quote{useEffect}</button>
+                <button className="btn btn-primary" id="new-quote" onClick={handleNewQuote}>New Quote</button>
               </div>
             </div>
           </div>
