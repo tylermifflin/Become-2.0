@@ -79,6 +79,10 @@ const QuotePage = () => {
     }
   };
 
+  const handleNewBackgroundImage = async () => {
+    setRandomLandscapeImage();
+  }
+
 
   return (
     <div style={imagestyle}>
@@ -95,6 +99,7 @@ const QuotePage = () => {
               </div>
               <div className="buttons">
                 <button className="btn btn-primary" id="new-quote" onClick={handleNewQuote}>New Quote</button>
+                <button className="btn btn-primary" id="new-background-image" onClick={handleNewBackgroundImage}>New Background Image</button>
               </div>
             </div>
           </div>
