@@ -73,10 +73,10 @@ const QuotePage = () => {
           <div className="col-md-12">
             <div className="quote-container">
               <div className="quote-text">
-                <i className="fa fa-quote-left"></i><span id="quote">{apiDataList}</span>
+                <i className="fa fa-quote-left"></i><span id="quote">{apiData.quote}</span>
               </div>
               <div className="quote-author">
-                <span id="author">{apiDataList}</span>
+                <span id="author">{apiData.author}</span>
               </div>
               <div className="buttons">
                 <button className="btn btn-primary" id="new-quote">New Quote{useEffect}</button>
