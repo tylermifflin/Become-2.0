@@ -8,12 +8,6 @@ body {
   flex-direction: column;
 }
 
-/* styling separate for home and non home pages due to animation */
-.notHome {
-  flex: 1; 
-  padding-top: 200px;
-  min-height: 100vh;
-}
 
 /* navbar styling */
 nav {
