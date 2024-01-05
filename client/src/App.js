@@ -15,7 +15,6 @@ import SingleGoal from './pages/SingleGoal';
 import Dashboard from './pages/Dashboard';
 import Header from './components/Header';
 import MoodPage from './pages/Moodpage';
-import QuotePage from './pages/Quote';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -72,10 +71,6 @@ function App() {
               <Route 
                 path="/mood"
                 element={<MoodPage />}
-              />
-              <Route 
-                path="/inspiration"
-                element={<QuotePage />}
               />
             </Routes>
           </div>
