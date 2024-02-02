@@ -15,8 +15,8 @@ export const QUERY_USER = gql`
       moodhistory {
         _id
         moodText
-        moodDate
         thought
+        moodDate
     }
   }
 }
@@ -49,8 +49,8 @@ export const QUERY_MOODS = gql`
     moods(username: $username) {
       _id
       moodText
-      moodDate
       thought
+      moodDate
     }
   }
 `;
@@ -60,8 +60,8 @@ export const QUERY_SINGLE_MOOD = gql`
     mood(moodId: $moodId) {
       _id
       moodText
-      moodDate
       thought
+      moodDate
     }
   }
 `;
@@ -81,8 +81,8 @@ export const QUERY_ME = gql`
       moodhistory {
         _id
         moodText
-        moodDate
         thought
+        moodDate
       }
     }
   }
