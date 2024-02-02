@@ -11,7 +11,6 @@ export const QUERY_USER = gql`
         goalTitle
         goalText
         createdAt
-        endDate
       }
       moodhistory {
         _id
@@ -30,7 +29,6 @@ export const QUERY_GOALS = gql`
       goalTitle
       goalText
       createdAt
-      endDate
     }
   }
 `;
@@ -42,7 +40,6 @@ export const QUERY_SINGLE_GOAL = gql`
       goalTitle
       goalText
       createdAt
-      endDate
     }
   }
 `;
@@ -80,7 +77,6 @@ export const QUERY_ME = gql`
         goalTitle
         goalText
         createdAt
-        endDate
       }
       moodhistory {
         _id
