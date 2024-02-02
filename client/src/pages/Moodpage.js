@@ -32,7 +32,7 @@ const MoodPage = () => {
                 <li key={mood._id}>
                     <p>Mood: {mood.moodText}</p>
                     <p>Thought: {mood.thought}</p>
-                    <p>Created On: {mood.createdAt}</p>
+                    <p>Created On: {mood.moodDate}</p>
                     <button onClick={() => handleDelete(mood._id)}>Delete</button>
                 </li>
                 ))}
