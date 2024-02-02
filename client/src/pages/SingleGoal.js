@@ -33,7 +33,6 @@ const GoalPage = () => {
                 <p>Goal Title: {goal.goalTitle}</p>
                 <p>Goal: {goal.goalText}</p>
                 <p>Created On: {goal.createdAt}</p>
-                <p>Due Date: {goal.endDate}</p>
                 <button onClick={() => handleDelete(goal._id)}>Delete</button>
               </li>
             ))}

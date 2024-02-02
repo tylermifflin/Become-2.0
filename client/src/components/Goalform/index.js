@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 const GoalForm = () => {
   const [goalTitle, setGoalTitle] = useState('');
   const [goalText, setGoalText] = useState('');
-  const [endDate, setEndDate] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
   const goals = useQuery( QUERY_GOALS);
   const me = useQuery( QUERY_ME);
@@ -41,23 +40,17 @@ const GoalForm = () => {
     }
   }
 
-  const handleEndDateChange = event => {
-    setEndDate(event.target.value);
-  }
-
   const handleFormSubmit = async event => {
     event.preventDefault();
 
     try {
-      console.log(typeof ( endDate));
       await addGoal({
-        variables: { goalTitle: goalTitle, goalText: goalText, endDate: endDate }
+        variables: { goalTitle: goalTitle, goalText: goalText}
       });
 
       setGoalTitle('');
       setGoalText('');
       setCharacterCount(0);
-      setEndDate('');
     } catch (e) {
       console.error(e);
     }
@@ -100,21 +93,6 @@ const GoalForm = () => {
                 onChange={handleChange}
               ></textarea>
             </div>
-
-            <div className="col-12 col-lg-9">
-              <label htmlFor="endDate">End Date:</label>
-              <input
-                type="date"
-                id="endDate"
-                name="endDate"
-                value={endDate}
-                onChange={handleEndDateChange}
-              />
-              {new Date(endDate) <= new Date() && (
-               <p className="text-danger">End date must be after today.</p>
-              )}
-            </div>
-
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">
                 Add Goal

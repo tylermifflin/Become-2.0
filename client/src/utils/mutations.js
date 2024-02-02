@@ -25,13 +25,12 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_GOAL = gql`
-  mutation addGoal($goalTitle: String! $goalText: String! $endDate: String) {
-    addGoal(goalTitle: $goalTitle, goalText: $goalText , endDate: $endDate) {
+  mutation addGoal($goalTitle: String! $goalText: String!) {
+    addGoal(goalTitle: $goalTitle, goalText: $goalText) {
       _id
       goalTitle
       goalText
       createdAt
-      endDate
     }
   }
 `;
@@ -53,7 +52,6 @@ export const REMOVE_GOAL = gql`
       _id
       goalText
       createdAt
-      endDate
     }
   }
 `;

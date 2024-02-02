@@ -59,12 +59,11 @@ const resolvers = {
       return { token, user };
     },
     // set up goal to be created before adding to the user
-    addGoal: async (parent, { goalTitle, goalText, endDate }, context) => {
+    addGoal: async (parent, { goalTitle, goalText}, context) => {
       if (context.user) {
         const goal = await Goal.create({
           goalTitle,
           goalText,
-          endDate,
         });
 
         await User.findOneAndUpdate(
