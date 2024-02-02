@@ -6,13 +6,13 @@ const moodSchema = new Schema({
   moodText: {
     type: String,
   },
-  moodDate: {
-    type: String,
-    default: Date.now,
-    get: (timestamp) => dateFormat(timestamp),
-  },
   thought: {
     type: String,
+  },
+  moodDate: {
+    type: Date,
+    default: Date.now,
+    get: (timestamp) => dateFormat(timestamp),
   },
   user: {
     type: Schema.Types.ObjectId,

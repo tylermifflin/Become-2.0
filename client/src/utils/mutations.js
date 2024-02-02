@@ -40,8 +40,8 @@ export const ADD_MOOD = gql`
     addMood(moodText: $moodText, thought: $thought) {
       _id
       moodText
-      moodDate
       thought
+      moodDate
     }
   }
 `;
@@ -61,8 +61,8 @@ export const REMOVE_MOOD = gql`
     removeMood(moodId: $moodId) {
       _id
       moodText
-      moodDate
       thought
+      moodDate
     }
   }
 `;

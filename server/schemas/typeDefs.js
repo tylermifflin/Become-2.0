@@ -21,8 +21,8 @@ const typeDefs = gql`
   type Mood {
     _id: ID
     moodText: String
-    moodDate: String
     thought: String
+    moodDate: String
   }
 
   type Auth {
