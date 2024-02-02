@@ -15,14 +15,14 @@ const typeDefs = gql`
     _id: ID
     goalTitle: String
     goalText: String
-    createdAt: String
-    endDate: String
+    createdAt: Date
+    endDate: Date
   }
 
   type Mood {
     _id: ID
     moodText: String
-    moodDate: String
+    moodDate: Date
     thought: String
   }
 
@@ -44,7 +44,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addGoal(goalTitle: String!, goalText: String!, endDate: String): Goal
+    addGoal(goalTitle: String!, goalText: String!, endDate: Date): Goal
     addMood(moodText: String!, thought: String!): Mood
     removeGoal(goalId: ID!): Goal
     removeMood(moodId: ID!): Mood
