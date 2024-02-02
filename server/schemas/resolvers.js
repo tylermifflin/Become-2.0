@@ -77,11 +77,10 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
     // set up mood to be created before adding to the user
-    addMood: async (parent, { moodText, moodDate, thought }, context) => {
+    addMood: async (parent, { moodText, thought }, context) => {
       if (context.user) {
         const mood = await Mood.create({
           moodText,
-          moodDate,
           thought,
         });
 
