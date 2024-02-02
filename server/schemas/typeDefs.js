@@ -45,7 +45,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addGoal(goalTitle: String!, goalText: String!, endDate: String): Goal
-    addMood(moodText: String!, moodDate: String!, thought: String!): Mood
+    addMood(moodText: String!, thought: String!): Mood
     removeGoal(goalId: ID!): Goal
     removeMood(moodId: ID!): Mood
   }
