@@ -17,12 +17,12 @@ const goalSchema = new Schema({
         maxlength: 280,
     },
     createdAt: {
-        type: String,
+        type: Date,
         default: Date.now,
         get: (timestamp) => dateFormat(timestamp),
     },
     endDate: {
-        type: String,
+        type: Date,
         default: Date.now,
         get: (timestamp) => dateFormat(timestamp),
     },
