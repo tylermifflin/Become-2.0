@@ -37,8 +37,8 @@ export const ADD_GOAL = gql`
 `;
 
 export const ADD_MOOD = gql`
-  mutation addMood($moodText: String! $moodDate: String! $thought: String!) {
-    addMood(moodText: $moodText, moodDate: $moodDate , thought: $thought) {
+  mutation addMood($moodText: String! $thought: String!) {
+    addMood(moodText: $moodText, thought: $thought) {
       _id
       moodText
       moodDate
