@@ -12,7 +12,6 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import SingleGoal from './pages/SingleGoal';
-import Dashboard from './pages/Dashboard';
 import Header from './components/Header';
 import MoodPage from './pages/Moodpage';
 
@@ -59,10 +58,6 @@ function App() {
               <Route 
                 path="/signup"
                 element={<Signup />}
-              />
-              <Route 
-                path="/me"
-                element={<Dashboard />}
               />
               <Route 
                 path="/goal"
