@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation, useQuery } from '@apollo/client';
 import { ADD_GOAL } from '../../utils/mutations';
-import { QUERY_GOALS, QUERY_ME } from '../../utils/queries';
+import { QUERY_GOALS } from '../../utils/queries';
 import Auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
 
@@ -10,7 +10,6 @@ const GoalForm = () => {
   const [goalText, setGoalText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
   const goals = useQuery( QUERY_GOALS);
-  const me = useQuery( QUERY_ME);
 
   const [addGoal, { error }] = useMutation(ADD_GOAL, {
     update(cache, { data: { addGoal } }) {
@@ -23,20 +22,16 @@ const GoalForm = () => {
       } catch (e) {
         console.error(e);
       }
-
-      console.log(me);
-      cache.writeQuery({
-        query: QUERY_ME,
-        data: { me: { ...me, goals: [...me.data.me.goals, addGoal] } }
-      });
     }
   });
 
   const handleChange = event => {
-    if (event.target.value.length <= 280) {
-      setGoalTitle(event.target.value);
-      setGoalText(event.target.value);
-      setCharacterCount(event.target.value.length);
+    const { name, value } = event.target;
+    if (name === 'goalTitle') {
+      setGoalTitle(value);
+    } else if (name === 'goalText' && value.length <= 280) {
+      setGoalText(value);
+      setCharacterCount(value.length);
     }
   }
 
