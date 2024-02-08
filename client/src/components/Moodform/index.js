@@ -84,10 +84,9 @@ const moodOptions = [ 'blissful', 'happy', 'sad', 'angry', 'anxious',
                 </div>
                 <div className="form-group">
                     <label htmlFor="thought">Thought</label>
-                    <textarea className="form-control" placeholder="What's on your mind?" value={thought} onChange={handleChange} maxLength="280"></textarea>
+                    <textarea className="form-control" name="thought" placeholder="What's on your mind?" value={thought} onChange={handleChange} maxLength="280"></textarea>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="characterCount">Character Count: {characterCount}/280</label>
                     <button className="btn btn-primary btn-block py-3" type="submit">Submit</button>
                 </div>
                 {error && (
