@@ -26,12 +26,14 @@ const MoodForm = () => {
     });
 
     const handleChange = event => {
-        if (event.target.value.length <= 280) {
-            setMoodText(event.target.value);
-            setThought(event.target.value);
-            setCharacterCount(event.target.value.length);
+        const { name, value } = event.target;
+        if (name === 'moodText') {
+            setMoodText(value);
+        } else if (name === 'thought' && value.length <= 280) {
+            setThought(value);
+            setCharacterCount(value.length);
         }
-    }
+    };
 
     const handleFormSubmit = async event => {
         event.preventDefault();
