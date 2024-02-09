@@ -4,6 +4,7 @@ import { ADD_GOAL } from '../../utils/mutations';
 import { QUERY_GOALS } from '../../utils/queries';
 import Auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const GoalForm = () => {
   const [goalTitle, setGoalTitle] = useState('');

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Auth from "../../utils/auth";
 import logo2 from "../.././images/logo2.png";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Header = () => {
   const logout = (event) => {

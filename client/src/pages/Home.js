@@ -1,6 +1,8 @@
 // importing react
 import React from "react";
-// importing logo1 from the images folder
+import 'bootstrap/dist/css/bootstrap.min.css';
+import logo2 from "../.././images/logo2.png";
+
 
 
 function Home() {
@@ -16,6 +18,7 @@ function Home() {
             You will increase your awareness, motivation, and feel more inspired to conquer your challenges. 
             Join us and unlock your unlimited potential. 
           </p>
+          <img src={logo2} alt="logo" width="100" ></img>
         </div>
       </div>
     </main>
