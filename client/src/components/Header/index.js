@@ -41,8 +41,7 @@ const Header = () => {
         <img src={logo2} alt="logo" width="100" ></img>
       </div>
       <div className="container-fluid col-11">
-        <Link className="navbar-brand" to="/">
-        <h1 className="text-center">Become</h1>  
+        <Link className="navbar-brand" to="/">  
         </Link>
         <button
           className="navbar-toggler"
