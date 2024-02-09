@@ -1,7 +1,7 @@
 // importing react
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo2 from "../.././images/logo2.png";
+import logo2 from ".././images/logo2.png";
 
 
 

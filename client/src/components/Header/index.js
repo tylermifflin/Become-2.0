@@ -73,11 +73,6 @@ const Header = () => {
               <div className="offcanvas-body">
                 <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                   <li className="nav-item">
-                    <Link className="nav-link" to="/me">
-                      {Auth.getProfile().data.username}'s Dashboard
-                    </Link>
-                  </li>
-                  <li className="nav-item">
                     <Link className="nav-link" to="/mood" onClick={closeMenu}>
                       Track Your Mood
                     </Link>
