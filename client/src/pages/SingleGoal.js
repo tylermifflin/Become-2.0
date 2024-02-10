@@ -33,7 +33,7 @@ const GoalPage = () => {
                 <p>Goal Title: {goal.goalTitle}</p>
                 <p>Goal: {goal.goalText}</p>
                 <p>Created On: {goal.createdAt}</p>
-                <button onClick={() => handleDelete(goal._id)}>Delete</button>
+                <button className='btn' onClick={() => handleDelete(goal._id)}>Delete</button>
               </li>
             ))}
           </ul>

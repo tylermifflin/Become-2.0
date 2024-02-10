@@ -36,9 +36,9 @@ const Header = () => {
   }, []);
 
   return (
-    <nav className="navbar bg-body-tertiary fixed-top header" style={{ padding: "5px" }}>
+    <nav className="navbar bg-body-tertiary fixed-top header">
       <div className="d-flex align-items-center col-2">
-        <img src={logo2} alt="logo" width="100" style={{ flex: "1"}} ></img>
+        <img src={logo2} alt="logo" width="250" ></img>
       </div>
       <div className="container-fluid col-9">
         <Link className="navbar-brand" to="/">  
