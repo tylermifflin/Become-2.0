@@ -9,8 +9,7 @@ function Home() {
 
   // render the home page
   return (
-    <main>
-      <div className="flex-row justify-center box">
+      <div className="flex-row justify-center">
         <div>
           <h1 className="text-center card-title">A User Friendly Self Helf App</h1>
           <p className="text-center">
@@ -21,7 +20,6 @@ function Home() {
           <img src={logo2} alt="logo" width="100" ></img>
         </div>
       </div>
-    </main>
   );
 }
 

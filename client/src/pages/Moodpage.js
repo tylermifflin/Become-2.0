@@ -20,7 +20,7 @@ const MoodPage = () => {
     };
     
     return (
-        <div className='notHome'>
+        <div>
         <MoodForm />
         <div>
             <h3>Current Moods:</h3>

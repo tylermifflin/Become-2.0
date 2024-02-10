@@ -20,7 +20,7 @@ const GoalPage = () => {
   };
 
   return (
-    <div className='notHome'>
+    <div>
       <GoalForm />
       <div>
         <h3>Current Goals:</h3>
