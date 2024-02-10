@@ -36,11 +36,11 @@ const Header = () => {
   }, []);
 
   return (
-    <nav className="navbar bg-body-tertiary fixed-top header">
-      <div className="col-1 ps-5">
-        <img src={logo2} alt="logo" width="100" ></img>
+    <nav className="navbar bg-body-tertiary fixed-top header" style={{ padding: "5px" }}>
+      <div className="d-flex align-items-center col-2">
+        <img src={logo2} alt="logo" width="100" style={{ flex: "1"}} ></img>
       </div>
-      <div className="container-fluid col-11">
+      <div className="container-fluid col-9">
         <Link className="navbar-brand" to="/">  
         </Link>
         <button
@@ -51,6 +51,7 @@ const Header = () => {
           aria-controls="offcanvasNavbar"
           aria-label="Toggle navigation"
           onClick={toggleMenu}
+          style={{ marginBottom: "5px", }}
         >
           <span className={`navbar-toggler-icon ${menuOpen ? "open" : ""}`}></span>
         </button>
