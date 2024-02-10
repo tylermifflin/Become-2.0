@@ -17,7 +17,9 @@ function Home() {
             You will increase your awareness, motivation, and feel more inspired to conquer your challenges. 
             Join us and unlock your unlimited potential. 
           </p>
-          <img src={logo} alt="logo" width="100" ></img>
+          <div className="card">
+          <img src={logo} alt="logo" width="100" className="card-img" ></img>
+          </div>
         </div>
       </div>
   );

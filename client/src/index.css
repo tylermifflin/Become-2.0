@@ -22,6 +22,15 @@ h1{
 
 }
 
+p{
+  font-family: 'Avalors Personal Use';
+  font-size: 1.5rem;
+  letter-spacing: 5px;
+  color: #FFFFFF;
+  text-shadow: 0 0 4px white;
+  padding-top: 20px;
+}
+
 
 .menu-links {
   position: absolute;
